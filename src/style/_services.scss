@@ -1,0 +1,53 @@
+.title__preview {
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.services {
+  margin-bottom: 40px;
+}
+
+.tree {
+  &__item:not(:last-child) {
+    padding-bottom: 4px;
+  }
+}
+
+.item {
+  &__descr {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__prev {
+    padding-bottom: 4px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    list-style: none;
+
+    &::webkit-details-marker {
+      display: none;
+    }
+
+    &::before {
+      content: '';
+      display: block;
+      margin-right: 5px;
+      position: relative;
+      bottom: 1px;
+      background-image: url('../icon/arrow.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 12px;
+      height: 12px;
+      transform: rotate(0deg);
+      transition: all .2s ease-in-out;
+    }
+  }
+}
+
+details[open]>.item__prev::before {
+  transform: rotate(90deg);
+  transition: all .2s ease-in-out;
+}
